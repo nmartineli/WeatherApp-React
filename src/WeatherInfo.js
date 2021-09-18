@@ -27,12 +27,12 @@ export default function WeatherInfo() {
       <h2 className="mb-2">
         <span className="temperature-number">{WeatherData.temperature}</span>
         <sup>
-          <a href="#" id="celsius-link" class="active">
+          <a href="/" id="celsius-link" class="active">
             {' '}
             °C
           </a>{' '}
           |
-          <a href="#" id="fahrenheit-link">
+          <a href="/" id="fahrenheit-link">
             °F
           </a>
         </sup>
