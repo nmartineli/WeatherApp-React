@@ -1,0 +1,16 @@
+.Footer footer {
+  display: block;
+  font-size: 10px;
+  margin: 3px auto;
+}
+
+.Footer footer a:link,
+.Footer footer a:visited {
+  color: #757575;
+  text-decoration: underline;
+  margin-right: 2px;
+}
+
+.Footer p {
+  color: #707070;
+}

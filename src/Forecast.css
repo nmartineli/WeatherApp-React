@@ -1,0 +1,12 @@
+.Forecast ul {
+  list-style: none;
+}
+
+.Forecast ul li {
+  background: rgba(255, 255, 255, 0.5);
+  color: #4a4a4e;
+}
+
+.Forecast p {
+  margin: 0;
+}

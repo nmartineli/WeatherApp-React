@@ -1,0 +1,39 @@
+.WeatherInfo h2 {
+  padding: 2px;
+  margin: 0;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.WeatherInfo h3 {
+  font-weight: 500;
+  font-size: 20px;
+  margin: 5px auto 20px auto;
+}
+
+.WeatherInfo h4 {
+  font-weight: 500;
+  font-size: 17px;
+  padding-bottom: 8px;
+}
+
+.WeatherInfo sup {
+  vertical-align: super;
+  font-size: 17px;
+}
+
+.WeatherInfo .forecast-image {
+  width: 35px;
+}
+
+.WeatherInfo .temperature-number {
+  font-weight: 600;
+  font-size: 42px;
+  padding-top: 15px;
+}
+
+.WeatherInfo img {
+  display: block;
+  margin: 0 auto;
+  width: 120px;
+}
