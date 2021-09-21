@@ -1,8 +1,8 @@
-.CitySearch form {
+.CitySearch .search-form {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  padding: 25px 10px;
-  border-radius: 10px;
+  padding: 1rem 1rem;
   margin: 0 auto;
+  border-radius: 10px;
 }

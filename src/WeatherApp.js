@@ -6,12 +6,10 @@ import Forecast from './Forecast';
 
 export default function WeatherApp() {
   return (
-    <div class="app">
-      <div id="weatherNow">
-        <CitySearch />
-        <WeatherInfo />
-        <Forecast />
-      </div>
+    <div className="app">
+      <CitySearch />
+      <WeatherInfo />
+      <Forecast />
     </div>
   );
 }

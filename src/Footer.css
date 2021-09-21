@@ -1,16 +1,15 @@
-.Footer footer {
+.Footer {
   display: block;
-  font-size: 10px;
-  margin: 3px auto;
+  font-size: 0.8rem;
+  margin: 0.2rem auto;
 }
 
-.Footer footer a:link,
-.Footer footer a:visited {
-  color: #757575;
+.Footer .footer__text {
+  color: #666666;
+}
+
+.Footer .footer__link,
+.Footer .footer__link:visited {
   text-decoration: underline;
-  margin-right: 2px;
-}
-
-.Footer p {
-  color: #707070;
+  color: #666666;
 }

@@ -4,7 +4,7 @@ import './CitySearch.css';
 export default function CitySearch() {
   return (
     <div className="CitySearch">
-      <form className="row" id="searchCityBox">
+      <form className="search-form row">
         <div className="col-7">
           <input
             type="search"
@@ -16,20 +16,12 @@ export default function CitySearch() {
           />
         </div>
         <div className="col-2">
-          <button
-            type="button"
-            className="btn btn-primary shadow-sm"
-            id="searchCityButton"
-          >
-            <i class="fas fa-search"></i>
+          <button type="button" className="btn btn-primary shadow-sm">
+            <i className="fas fa-search"></i>
           </button>
         </div>
-        <div className="col-3">
-          <button
-            type="button"
-            className="btn btn-primary shadow-sm"
-            id="currentLocationButton"
-          >
+        <div className="col-2">
+          <button type="button" className="btn btn-primary shadow-sm me-1">
             <i className="fas fa-map-marker-alt"></i>
           </button>
         </div>

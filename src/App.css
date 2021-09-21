@@ -1,13 +1,12 @@
-body,
-a {
+.App {
   text-align: center;
   font-family: 'Roboto', sans-serif;
   color: #f6f6f6;
   margin: 0;
 }
 
-main {
-  max-width: 500px;
+.App .main {
+  max-width: 35rem;
   display: block;
-  margin: 15px auto 0px auto;
+  margin: 0.5rem auto 0 auto;
 }
