@@ -27,6 +27,9 @@
 .WeatherInfo .weather-info__description {
   margin: 1.5rem 1rem;
 }
+.WeatherInfo .weather-info__description:first-letter {
+  text-transform: uppercase;
+}
 
 .WeatherInfo .weather-info__humidity-wind {
   display: flex;
