@@ -1,19 +1,28 @@
-.app {
+.WeatherApp {
   background-image: linear-gradient(to top, #6f86d6 10%, #48c6ef 100%);
   border: solid 1px #c0c0c0;
   border-radius: 10px;
   padding: 0;
 }
 
-.app .active {
+.WeatherApp .active {
   color: #fff;
   cursor: default;
   text-decoration: none;
   font-weight: 700;
 }
 
-.app .active:hover {
+.WeatherApp.active:hover {
   color: #fff;
   cursor: default;
   text-decoration: none;
+}
+
+.WeatherApp .search-form {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 1rem 1rem;
+  margin: 0 auto;
+  border-radius: 10px;
 }
