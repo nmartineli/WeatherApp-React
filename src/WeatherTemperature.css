@@ -1,0 +1,13 @@
+.WeatherTemperature .weather-info__temperature {
+  font-size: 3.75rem;
+  margin: 1rem 1rem;
+}
+
+.WeatherInfo .weather-info__temperature-units {
+  vertical-align: super;
+  font-size: 1.3rem;
+}
+.WeatherInfo .weather-info__temperature-units--celsius,
+.WeatherInfo .weather-info__temperature-units--fahrenheint {
+  color: #fff;
+}

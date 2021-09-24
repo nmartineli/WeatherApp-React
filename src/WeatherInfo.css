@@ -9,21 +9,6 @@
   font-size: 1.5rem;
 }
 
-.WeatherInfo .weather-info__temperature {
-  font-size: 3.75rem;
-  margin: 1rem 1rem;
-}
-
-.WeatherInfo .weather-info__temperature-units {
-  vertical-align: super;
-  font-size: 1.3rem;
-}
-.WeatherInfo .weather-info__temperature-units--celsius,
-.WeatherInfo .weather-info__temperature-units--fahrenheint {
-  color: #fff;
-  text-decoration: none;
-}
-
 .WeatherInfo .weather-info__description {
   margin: 1.5rem 1rem;
 }
