@@ -10,9 +10,9 @@ import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 export default function CitySearch() {
   const [ready, setReady] = useState(false);
-  const [results, setResults] = useState({});
   const [city, setCity] = useState('London');
   const [query, setQuery] = useState();
+  const [weatherData, setWeatherData] = useState({});
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -20,14 +20,30 @@ export default function CitySearch() {
     setCity(query);
   }
 
-  function getCity(event) {
+  function handleQuery(event) {
     setQuery(event.target.value);
-    console.log(query);
   }
 
   function handleResponse(res) {
-    setResults(res.data);
+    setWeatherData({
+      city: res.data.name,
+      country: res.data.sys.country,
+      date: new Date(res.data.dt * 1000),
+      temperature: Math.round(res.data.main.temp),
+      description: res.data.weather[0].description,
+      imgUrl: 'http://openweathermap.org/img/wn/10d@2x.png',
+      humidity: res.data.main.humidity,
+      wind: res.data.wind.speed,
+    });
     setReady(true);
+  }
+
+  function searchCity() {
+    const apiKey = 'e9c8f163983d89bbded5b7cfe995b64a';
+    const units = 'metric';
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+
+    axios.get(url).then(handleResponse);
   }
 
   if (ready) {
@@ -43,7 +59,7 @@ export default function CitySearch() {
               placeholder="Search city"
               autoComplete="off"
               autoFocus="on"
-              onChange={getCity}
+              onChange={handleQuery}
             />
           </div>
           <div className="col-2">
@@ -57,25 +73,20 @@ export default function CitySearch() {
             </button>
           </div>
         </form>
-        <WeatherInfo results={results} />
+        <WeatherInfo weatherData={weatherData} />
         <Forecast />
       </div>
     );
   } else {
-    const apiKey = 'e9c8f163983d89bbded5b7cfe995b64a';
-    const units = 'metric';
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-
-    console.log(url);
-    axios.get(url).then(handleResponse);
+    searchCity();
 
     return (
       <div className="mt-5 mb-5">
         <Loader
           type="ThreeDots"
           color="#FFF"
-          height={70}
-          width={70}
+          height={40}
+          width={40}
           timeout={3000}
         />
       </div>
