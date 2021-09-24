@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactAnimatedWeather from 'react-animated-weather';
-
+import FormatDate from './FormatDate';
 import './WeatherInfo.css';
 
 export default function WeatherInfo(props) {
   const weatherData = {
     city: props.results.name,
     country: props.results.sys.country,
-    date: 'Monday, 08:40',
+    date: new Date(props.results.dt * 1000),
     temperature: Math.round(props.results.main.temp),
     description: props.results.weather[0].description,
     imgUrl: 'http://openweathermap.org/img/wn/10d@2x.png',
@@ -25,7 +25,9 @@ export default function WeatherInfo(props) {
       <h2 className="weather-info__city-name">
         {weatherData.city}, {weatherData.country}
       </h2>
-      <h3 className="weather-info__date">{weatherData.date}</h3>
+      <h3 className="weather-info__date">
+        <FormatDate date={weatherData.date} />
+      </h3>
       <h2 className="weather-info__temperature">
         {weatherData.temperature}
         <sup className="weather-info__temperature-units">
