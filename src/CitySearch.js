@@ -1,30 +1,33 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Loader from 'react-loader-spinner';
 
 import WeatherInfo from './WeatherInfo';
 import Forecast from './Forecast';
 
 import './CitySearch.css';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 export default function CitySearch() {
   const [ready, setReady] = useState(false);
   const [results, setResults] = useState({});
   const [city, setCity] = useState('London');
-  const [query, setQuery] = useState(null);
-
-  function handleResponse(res) {
-    console.log(res.data);
-    setResults(res.data);
-    setReady(true);
-  }
+  const [query, setQuery] = useState();
 
   function handleSubmit(event) {
     event.preventDefault();
+    setReady(false);
     setCity(query);
   }
 
   function getCity(event) {
     setQuery(event.target.value);
+    console.log(query);
+  }
+
+  function handleResponse(res) {
+    setResults(res.data);
+    setReady(true);
   }
 
   if (ready) {
@@ -66,6 +69,16 @@ export default function CitySearch() {
     console.log(url);
     axios.get(url).then(handleResponse);
 
-    return 'Loading...';
+    return (
+      <div className="mt-5 mb-5">
+        <Loader
+          type="ThreeDots"
+          color="#FFF"
+          height={70}
+          width={70}
+          timeout={3000}
+        />
+      </div>
+    );
   }
 }

@@ -4,14 +4,15 @@ import ReactAnimatedWeather from 'react-animated-weather';
 import './WeatherInfo.css';
 
 export default function WeatherInfo(props) {
-  const WeatherData = {
-    city: 'São Paulo',
+  const weatherData = {
+    city: props.results.name,
+    country: props.results.sys.country,
     date: 'Monday, 08:40',
-    temperature: 18,
-    description: 'Sunny',
+    temperature: Math.round(props.results.main.temp),
+    description: props.results.weather[0].description,
     imgUrl: 'http://openweathermap.org/img/wn/10d@2x.png',
-    humidity: 30,
-    wind: 1.5,
+    humidity: props.results.main.humidity,
+    wind: props.results.wind.speed,
   };
   const defaults = {
     icon: 'CLEAR_DAY',
@@ -21,10 +22,12 @@ export default function WeatherInfo(props) {
   };
   return (
     <div className="WeatherInfo">
-      <h2 className="weather-info__city-name">{props.results.name}</h2>
-      <h3 className="weather-info__date">{WeatherData.date}</h3>
+      <h2 className="weather-info__city-name">
+        {weatherData.city}, {weatherData.country}
+      </h2>
+      <h3 className="weather-info__date">{weatherData.date}</h3>
       <h2 className="weather-info__temperature">
-        {Math.round(props.results.main.temp)}
+        {weatherData.temperature}
         <sup className="weather-info__temperature-units">
           <a href="/" className="weather-info__temperature-units--celsius">
             {' '}
@@ -42,16 +45,14 @@ export default function WeatherInfo(props) {
         size={defaults.size}
         animate={defaults.animate}
       />
-      <h4 className="weather-info__description">
-        {props.results.weather[0].description}
-      </h4>
+      <h4 className="weather-info__description">{weatherData.description}</h4>
       <ul className="weather-info__humidity-wind">
         <li>
-          <strong>Humidity:</strong> {props.results.main.humidity}%
+          <strong>Humidity:</strong> {weatherData.humidity}%
         </li>
 
         <li>
-          <strong>Wind:</strong> {props.results.wind.speed} m/s
+          <strong>Wind:</strong> {weatherData.wind} m/s
         </li>
       </ul>
     </div>
