@@ -24,7 +24,8 @@ export default function WeatherTemperature(props) {
         <h2 className="weather-info__temperature b">
           {props.temperature}
           <sup className="weather-info__temperature-units">
-            <strong>°C </strong>|{' '}
+            {' '}
+            <strong> °C </strong>|{' '}
             <a
               href="/"
               className="weather-info__temperature-units--fahrenheint"

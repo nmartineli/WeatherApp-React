@@ -14,7 +14,7 @@ export default function WeatherInfo(props) {
         <FormatDate date={props.weatherData.date} />
       </h3>
       <WeatherTemperature temperature={props.weatherData.temperature} />
-      <WeatherIcon icon={props.weatherData.icon} />
+      <WeatherIcon icon={props.weatherData.icon} size={90} color={'#fff'} />
       <h4 className="weather-info__description">
         {props.weatherData.description}
       </h4>

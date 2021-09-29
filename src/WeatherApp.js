@@ -34,6 +34,7 @@ export default function WeatherApp() {
       icon: res.data.weather[0].icon,
       humidity: res.data.main.humidity,
       wind: res.data.wind.speed,
+      coordinates: res.data.coord,
     });
     setReady(true);
   }
@@ -74,7 +75,7 @@ export default function WeatherApp() {
           </div>
         </form>
         <WeatherInfo weatherData={weatherData} />
-        <Forecast />
+        <Forecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {

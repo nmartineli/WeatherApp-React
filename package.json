@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.4",
     "bootstrap": "^5.1.1",
+    "caniuse-lite": "^1.0.30001261",
     "react": "^17.0.2",
     "react-animated-weather": "^4.0.1",
     "react-dom": "^17.0.2",
