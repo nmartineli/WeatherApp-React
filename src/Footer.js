@@ -6,16 +6,24 @@ export default function Footer() {
     <div className="Footer">
       <footer>
         <p className="footer__text">
-          This is an{' '}
+          This project was coded by{' '}
+          <a
+            href="https://lucid-williams-3971e9.netlify.app"
+            className="footer__link"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Natalia Martineli
+          </a>{' '}
+          and is{' '}
           <a
             href="https://github.com/nmartineli/WeatherApp-React"
             className="footer__link"
             target="_blank"
             rel="noreferrer"
           >
-            open-source code
+            open-sourced
           </a>{' '}
-          by Natalia Martineli
         </p>
       </footer>
     </div>

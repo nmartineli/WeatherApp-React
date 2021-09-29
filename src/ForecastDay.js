@@ -28,7 +28,7 @@ export default function ForecastDay(props) {
       <p className="mb-2">
         <b>{forecastDay()}</b>
       </p>
-      <WeatherIcon icon={forecastIcon()} size={40} color="#FF5F49" />
+      <WeatherIcon icon={forecastIcon()} size={40} color="#FF8C76" />
       <div className="d-flex justify-content-around mt-1">
         <p>{minTemperature()}</p>
         <p>

@@ -11,6 +11,7 @@
 
 .WeatherInfo .weather-info__description {
   margin: 1.5rem 1rem;
+  font-size: 1.2rem;
 }
 .WeatherInfo .weather-info__description:first-letter {
   text-transform: uppercase;

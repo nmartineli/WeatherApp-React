@@ -10,7 +10,7 @@ import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 export default function WeatherApp() {
   const [ready, setReady] = useState(false);
-  const [city, setCity] = useState('London');
+  const [city, setCity] = useState('Sao Paulo');
   const [query, setQuery] = useState();
   const [weatherData, setWeatherData] = useState({});
 
@@ -51,13 +51,13 @@ export default function WeatherApp() {
     return (
       <div className="WeatherApp">
         <form className="search-form row" onSubmit={handleSubmit}>
-          <div className="col-7">
+          <div className="col-9">
             <input
               type="search"
               className="form-control shadow-sm"
               id="searchBox"
               aria-describedby="searchBox"
-              placeholder="Search city"
+              placeholder="Search for a city"
               autoComplete="off"
               autoFocus="on"
               onChange={handleQuery}
@@ -66,11 +66,6 @@ export default function WeatherApp() {
           <div className="col-2">
             <button type="submit" className="btn btn-primary shadow-sm">
               <i className="fas fa-search"></i>
-            </button>
-          </div>
-          <div className="col-2">
-            <button type="button" className="btn btn-primary shadow-sm me-1">
-              <i className="fas fa-map-marker-alt"></i>
             </button>
           </div>
         </form>
